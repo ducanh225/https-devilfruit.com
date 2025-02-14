@@ -259,7 +259,7 @@
 
 <body>
 <center>.<font size=100 face=“tahoma” color=RED> Every devil fruit in </font>.<br>
-<img src=ảnh.png width=600></center> <alt=“loading”> 
+<img src=anh.png width=600></center> <alt=“loading”> 
 <table width=100%>
 <tr>
 <td width=10%> </td>
