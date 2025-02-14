@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Reset cơ bản */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Kiểu dáng menu chính */
+ul {
+    list-style: none;
+    background: #f6c102;
+    padding: 0;
+    margin: 0;
+     /* Menu cố định ở đầu trang */
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Các mục menu chính */
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+/* Liên kết menu chính */
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: #050202;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Menu con (dropdown) */
+ul li ul.dropdown {
+    width: 81vw; /* Chiều rộng menu con */
+    position: absolute; 
+    top: 100%; 
+    left: -350px; 
+    background: #f6c102;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    /* Giới hạn chiều cao menu con và thêm thanh cuộn khi cần */
+    max-height: 400px; /* Tùy chỉnh chiều cao tối đa */
+    overflow-y: auto;
+}
+
+/* Mục con trong menu con */
+ul li ul.dropdown li {
+    display: inline-block;
+}
+
+/* Hiệu ứng hover menu chính */
+ul li a:hover {
+    background: #e5b802;
+}
+
+/* Hiển thị menu con khi hover */
+ul li:hover ul.dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Cho phép các mục menu xuống dòng */
+}
+
+/* Thêm thanh cuộn tùy chỉnh (nếu cần) */
+ul li ul.dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul li ul.dropdown::-webkit-scrollbar-thumb {
+    background: #e5b802;
+    border-radius: 4px;
+}
+
+ul li ul.dropdown::-webkit-scrollbar-thumb:hover {
+    background: #d4a202;
+}
+
+ul li ul.dropdown::-webkit-scrollbar-track {
+    background: #f6c102;
+}
